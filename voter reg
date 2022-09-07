@@ -1,0 +1,99 @@
+<html>
+    <head><title>VOTER REGISTRATION</title>
+    <style>
+        body
+        {
+            background-color: aquamarine;
+        }
+        h1{
+            color: burlywood;
+            text-align: center;
+        }
+      
+    </style></head>
+
+    <body>
+        <h1>VOTER REGISTRATION</h1>
+        <form name="f" onsubmit="validate()">
+            <table style="margin-left:auto;margin-right:auto;" >
+                <tr>
+                    <td>
+                        NAME:
+                    </td>
+                    <td><input type="text" name="n"></td>
+                </tr>
+                <tr>
+                <td>
+                    AGE:
+                </td>
+                <td><input type="number" name="a"></td>
+            </tr>
+            <tr>
+                <td>DOB</td>
+                <td><input type="date" name="d"></td>
+            </tr>
+            <tr>
+                <td>
+                    GENDER
+                </td>
+                <td>
+                    <input type="radio" name="GENDER" value="male">male
+                    <input type="radio" name="GENDER" value="female">female
+                    <input type="radio" name="GENDER" value="others">others
+
+                </td>
+            </tr>
+            <tr>
+                <td>AADHAR NUMBER:</td>
+                <td>
+                    <input type="number" name="aadhar">
+                </td>
+            </tr>
+            
+            <tr>
+                <td >
+                <input type="submit" value="REGISTER">
+                </td>
+                <td >
+                    <input type="reset" value="cancel" onclick="reset()">
+                    </td>
+            </tr>
+
+            </table>
+        </form>
+        <script>
+            function validate()
+            {
+               name=document.f.n.value;
+               age=document.f.a.value;
+               k=document.f.aadhar.value;
+              if(name=="")
+              {
+                alert("name should be filled");
+              }
+               if(name.length>30)
+              {
+                alert("length of nme shouldnt be greater than 30");
+              }
+              if(age=="")
+              {
+                alert("enteer age");
+              }
+               if(age!="" &&age<18)
+              {
+                alert("age must be greater than 18")
+              }
+               if(k=="")
+              {
+                alert("aadhar number is empty");
+              }
+              if((k!="")&&(k.length<12||k.length>12))
+              {
+                alert("enter aadhar number properly");
+              }
+              
+            }
+        </script>
+        
+    </body>
+</html>
